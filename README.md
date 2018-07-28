@@ -37,3 +37,6 @@ $ npm run test:cov
 ```
 
 # nest-user
+
+#cross-env is use for no worry about variable in env
+$ npm install --save-dev cross-env

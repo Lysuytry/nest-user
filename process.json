@@ -1,0 +1,18 @@
+{
+  "apps": [
+    {
+      "name": "nest-user",
+      "script": "npm",
+      "args": "node dist/index.js",
+      "instances": "max",
+      "exec_mode": "cluster",
+      "source_map_support": true,
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
