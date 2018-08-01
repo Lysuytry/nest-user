@@ -1,6 +1,7 @@
 import {IsString, IsNotEmpty, IsNumber} from 'class-validator';
+import { Pagination } from 'common/class/pagination';
 
-export class productDto {
+export class CreateProduct {
   @IsNotEmpty()
   @IsString()
   readonly name!: string;
@@ -36,4 +37,35 @@ export class productDto {
   @IsNumber()
   readonly updatedBy!: number;
 
+}
+
+export class UpdateProduct {
+  @IsString()
+  readonly name!: string;
+
+  @IsNumber()
+  readonly container!: number;
+
+  @IsNumber()
+  readonly quantity!: number;
+
+  @IsNumber()
+  readonly unitPrice!: number;
+
+  @IsNumber()
+  readonly wholePrice!: number;
+
+  @IsNumber()
+  readonly categoryId!: number;
+
+  @IsString()
+  readonly status!: string;
+
+  @IsNumber()
+  readonly updatedBy!: number;
+}
+
+export class GetSimpleQuery extends Pagination{
+  @IsString()
+  readonly status!: string;
 }
