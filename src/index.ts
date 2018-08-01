@@ -6,6 +6,7 @@ import * as logger from 'morgan';
 import { AppExceptionFilter } from 'common/exception-filter/exception';
 import { ValidationPipe } from '@nestjs/common';
 import { ApplicationExceptionFilter } from 'common/exception-filter/application-error';
+import 'dotenv/config';
 
 declare const module: any;
 
@@ -19,7 +20,7 @@ const bootstrap = async () => {
   app.useGlobalFilters(new ApplicationExceptionFilter());
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true, forbidNonWhitelisted: false }));
 
-  await app.listen(3001, () => {
+  await app.listen(3000, () => {
     console.log(`Listening port 3000`);
   });
 

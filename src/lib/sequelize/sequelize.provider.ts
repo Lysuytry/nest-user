@@ -8,15 +8,17 @@ export const databaseProvider = {
   provide: SequelizeToken,
   useFactory: async () => {
     const sequelize = new Sequelize({
-      host: DB_HOST,
-      database: DB_SCHEMA,
-      username: DB_USERNAME,
-      password: DB_PASSWORD,
-      dialect: DB_CONNECTION,
+      host: 'localhost',
+      database: 'stock-example',
+      username: 'root',
+      password: '16021997',
+      dialect: 'mysql',
       logging: DB_LOGGING ? console.log : false,
       operatorsAliases: false
     });
+    //console.log(model);
     sequelize.addModels(_.map(models, x => x));
+    //console.log(models);
     await sequelize.sync();
     return sequelize;
   }

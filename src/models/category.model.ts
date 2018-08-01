@@ -1,6 +1,6 @@
 import { Column, Table, Model, CreatedAt, UpdatedAt, DataType} from 'sequelize-typescript';
 
-@Table({ tableName: 'Categories'})
+@Table
 export class Category extends Model<Category>{
   @Column({ autoIncrement: true, primaryKey: true })
   id!: number;
